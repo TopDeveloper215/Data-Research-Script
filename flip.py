@@ -2,10 +2,10 @@ import os
 from PIL import Image
 
 source_folder = "./1.size_changed"
-destination_folder = "./2.flipped"
+output_folder = "./2.flipped"
 
-if not os.path.exists(destination_folder):
-    os.makedirs(destination_folder)
+if not os.path.exists(output_folder):
+    os.makedirs(output_folder)
 
 for filename in os.listdir(source_folder):
     try:
@@ -13,7 +13,7 @@ for filename in os.listdir(source_folder):
             image_path = os.path.join(source_folder, filename)
             image = Image.open(image_path).convert("RGB")
             flipped_image = image.transpose(Image.FLIP_LEFT_RIGHT)
-            flipped_image_path = os.path.join(destination_folder, "." +  filename)
+            flipped_image_path = os.path.join(output_folder, "." +  filename)
             flipped_image.save(flipped_image_path)
     except IOError:
         print(f"File not found or cannot process: {filename}. Skipping...")

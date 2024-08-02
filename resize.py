@@ -1,16 +1,16 @@
 import os
 from PIL import Image
 
-input_folder = './4.cropped'
+source_folder = './4.cropped'
 output_folder = './5.resized'
 
 if not os.path.exists(output_folder):
     os.makedirs(output_folder)
 
-for filename in os.listdir(input_folder):
+for filename in os.listdir(source_folder):
     try:
         if filename.lower().endswith(('.jpg', '.png', '.jpeg', '.webp')):  
-            image_path = os.path.join(input_folder, filename)
+            image_path = os.path.join(source_folder, filename)
             image = Image.open(image_path)
             width, height = image.size
             width_1 = int(width /0.88) 

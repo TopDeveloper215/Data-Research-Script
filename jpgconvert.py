@@ -3,12 +3,12 @@ from PIL import Image
 
 src_folder = './0.origin_images'
 flip_folder = './6.final_result'
-converted_folder = './7.converted_to_jpg'
+output_folder = './7.converted_to_jpg'
 
 if not os.path.exists(flip_folder):
     os.makedirs(flip_folder)
-if not os.path.exists(converted_folder):
-    os.makedirs(converted_folder)
+if not os.path.exists(output_folder):
+    os.makedirs(output_folder)
 
 # for filename in os.listdir(src_folder):
 #     try:
@@ -30,7 +30,7 @@ for filename in os.listdir(flip_folder):
     try:
         if filename.lower().endswith(('.jpg', '.png', '.jpeg', '.webp')):
           output_path = os.path.join(flip_folder, filename)
-          dst_path = os.path.join(converted_folder, os.path.splitext(filename)[0] + '.jpg')
+          dst_path = os.path.join(output_folder, os.path.splitext(filename)[0] + '.jpg')
           with Image.open(output_path) as rotated_image:
               rotated_image.save(dst_path, 'JPEG', quality=90)
           os.remove(output_path)
