@@ -3,7 +3,7 @@ from PIL import Image
 
 min_size = 640
 current_dir = os.getcwd()
-image_dir = '0.images'
+image_dir = '0.origin_images'
 resized_dir = '1.size_changed'
 image_dir = os.path.join(current_dir, image_dir)
 resized_dir = os.path.join(current_dir, resized_dir)

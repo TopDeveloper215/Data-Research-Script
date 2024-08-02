@@ -1,7 +1,7 @@
 import os
 from PIL import Image
 
-folder_path = './0.images'
+folder_path = './0.origin_images'
 output_folder = './1.size_changed'
 target_size = (1280, 960)
 
@@ -15,4 +15,3 @@ for filename in os.listdir(folder_path):
         resized_image = image.resize(target_size, resample=Image.BICUBIC)
         output_file_path = os.path.join(output_folder, filename)
         resized_image.save(output_file_path)
-        print(f'Resized image to: {filename}')

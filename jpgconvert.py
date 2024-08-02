@@ -1,8 +1,8 @@
 import os
 from PIL import Image
 
-src_folder = './0.images'
-flip_folder = './6.result'
+src_folder = './0.origin_images'
+flip_folder = './6.final_result'
 converted_folder = './7.converted_to_jpg'
 
 if not os.path.exists(flip_folder):
