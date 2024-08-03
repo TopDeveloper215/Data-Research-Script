@@ -80,7 +80,3 @@ for image in filtered_images:
     output_path = os.path.join(filtered_folder, image)
     shutil.move(source_path, output_path)
     print(f"Moved {image} to {filtered_folder}")
-
-
-
-       
