@@ -37,14 +37,12 @@ print("All names: \n")
 for i, name in enumerate(unique_names, start=1):
     print(f"{i}. {name}")
 name_index = int(input("\n Select name :")) - 1
-print()
 name_input = unique_names[name_index]
 
 print("All types: \n")
 for i, type in enumerate(unique_types, start=1):
     print(f"{i}. {type}")
 type_index = int(input("\n Select type : ")) - 1
-print()
 type_input = unique_types[type_index]
 
 for list in lists:
