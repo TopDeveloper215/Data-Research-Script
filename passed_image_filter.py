@@ -50,14 +50,15 @@ for list in lists:
         name = list_component[1]
         type = list_component[2]
         if name == name_input and type == type_input:
-            each_passed_list = list_component[3]
+            each_passed_list = list_component[-1]
             passed_list.append(each_passed_list)
     elif len(list_component) == 3:
         name = list_component[1]
         if name == name_input:
-            each_passed_list = list_component[2]
+            each_passed_list = list_component[-1]
             passed_list.append(each_passed_list)
-
+print(passed_list)
+print(len(passed_list))
 all_images = os.listdir(image_folder)
 filtered_images = [image for image in all_images if image in passed_list]
 
