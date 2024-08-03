@@ -57,8 +57,6 @@ for list in lists:
         if name == name_input:
             each_passed_list = list_component[-1]
             passed_list.append(each_passed_list)
-print(passed_list)
-print(len(passed_list))
 all_images = os.listdir(image_folder)
 filtered_images = [image for image in all_images if image in passed_list]
 
