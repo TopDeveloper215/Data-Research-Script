@@ -2,13 +2,14 @@ import csv
 import os
 import shutil
 
-file_path = './8.passed_image_filter/data.csv'
-image_folder = './0.origin_images'
+file_path = './CSV/data.csv'
+image_folder = './8.origin_images'
 filtered_folder = './8.passed_image_filter'
 
 lists = []
 passed_list = []
 unique_names = set()
+unique_types = set()
 
 os.makedirs(filtered_folder, exist_ok=True)
 with open(file_path, newline='', encoding='utf-8') as csvfile:
@@ -21,16 +22,31 @@ with open(file_path, newline='', encoding='utf-8') as csvfile:
         lists.append(file_path)
         name_component = file_path.split('\\')[1]
         unique_names.add(name_component)
+        list_path = file_path.split('\\')
+        if len(list_path) > 3:
+            type_input = list_path[2]
+            unique_types.add(type_input)
+        elif len(list_path) == 3 :
+            type_input = 'none'
+            unique_types.add(type_input)
 
 unique_names = sorted(list(unique_names))
-print("All names:")
+unique_types = sorted(list(unique_types))
+
+print("All names: \n")
 for i, name in enumerate(unique_names, start=1):
     print(f"{i}. {name}")
-
-name_index = int(input("Please select name")) - 1
+name_index = int(input("\n Select name :")) - 1
+print()
 name_input = unique_names[name_index]
 
-type_input = input("Please input type: ")
+print("All types: \n")
+for i, type in enumerate(unique_types, start=1):
+    print(f"{i}. {type}")
+type_index = int(input("\n Select type : ")) - 1
+print()
+type_input = unique_types[type_index]
+
 for list in lists:
     list_component = list.split('\\')
     if len(list_component) > 3:
@@ -43,16 +59,19 @@ for list in lists:
         name = list_component[1]
         if name == name_input:
             each_passed_list = list_component[2]
-            print(each_passed_list)
             passed_list.append(each_passed_list)
 
 all_images = os.listdir(image_folder)
 filtered_images = [image for image in all_images if image in passed_list]
+
+if filtered_images == []:
+    print('Passed images not found')
+
 for image in filtered_images:
     source_path = os.path.join(image_folder, image)
     output_path = os.path.join(filtered_folder, image)
     shutil.move(source_path, output_path)
-    # print(f"Moved {image} to {filtered_folder}")
+    print(f"Moved {image} to {filtered_folder}")
 
 
 
