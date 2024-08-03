@@ -1,17 +1,16 @@
 import csv
 import os
 import shutil
+from datetime import datetime
 
-file_path = './CSV/data.csv'
+file_path = './data.csv'
 image_folder = './8.origin_images'
-filtered_folder = './8.passed_image_filter'
 
 lists = []
 passed_list = []
 unique_names = set()
 unique_types = set()
 
-os.makedirs(filtered_folder, exist_ok=True)
 with open(file_path, newline='', encoding='utf-8') as csvfile:
     reader = csv.reader(csvfile)
     next(reader, None)
@@ -64,6 +63,17 @@ filtered_images = [image for image in all_images if image in passed_list]
 
 if filtered_images == []:
     print('Passed images not found')
+
+current_date = datetime.now()
+month_day = f"{current_date.month}.{current_date.day}"
+
+if name_input and type_input != 'none':
+    output_folder_name = f"{month_day}_Passed image_{name_input}({type_input})"
+else:
+    output_folder_name = f"{month_day}_Passed image_{name_input}"
+
+filtered_folder = os.path.join('./', output_folder_name)
+os.makedirs(filtered_folder, exist_ok=True)
 
 for image in filtered_images:
     source_path = os.path.join(image_folder, image)
