@@ -1,7 +1,7 @@
 import os
 from PIL import Image
 
-source_folder = './0.origin_images'
+source_folder = './1.converted_to_jpg'
 output_folder = './1.size_changed'
 target_size = (1280, 960)
 
