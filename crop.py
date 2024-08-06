@@ -1,8 +1,8 @@
 import os
 from PIL import Image
 
-source_folder = './3.rotated'
-output_folder = './4.cropped'
+source_folder = './4.rotated'
+output_folder = './5.cropped'
 
 if not os.path.exists(output_folder):
     os.makedirs(output_folder)

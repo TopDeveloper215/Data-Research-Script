@@ -1,6 +1,6 @@
 import os
 
-folder_path = './2.flipped'
+folder_path = './3.flipped'
 for filename in os.listdir(folder_path):
     if filename.lower().endswith(('.jpg', '.png', '.jpeg', '.webp')):        
         new_filename = "!" + filename

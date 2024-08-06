@@ -1,8 +1,8 @@
 import os
 from PIL import Image
 
-source_folder = './4.cropped'
-output_folder = './5.resized'
+source_folder = './5.cropped'
+output_folder = './6.resized'
 
 target_size = (1280,960)
 

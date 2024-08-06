@@ -2,10 +2,10 @@ import os
 import shutil
 from PIL import Image
 
-source_folder1 = './2.flipped'
-source_folder2 = './5.resized'
-temp_folder = './6.converted_to_png'
-output_folder = './7.final_result'
+source_folder1 = './3.flipped'
+source_folder2 = './6.resized'
+temp_folder = './7.converted_to_png'
+output_folder = './8.final_result'
 
 if not os.path.exists(output_folder):
     os.makedirs(output_folder)

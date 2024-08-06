@@ -2,7 +2,7 @@ import os
 from PIL import Image
 
 src_folder = './0.origin_images'
-flip_folder = './2.flipped'
+flip_folder = './3.flipped'
 output_folder = './1.converted_to_jpg'
 
 if not os.path.exists(flip_folder):

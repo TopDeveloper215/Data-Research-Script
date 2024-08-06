@@ -1,8 +1,8 @@
 import os
 import shutil
 
-source_folder = './1.size_changed'
-output_folder = './2.flipped'
+source_folder = './2.size_changed'
+output_folder = './3.flipped'
 
 if not os.path.exists(output_folder):
     os.makedirs(output_folder)
