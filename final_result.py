@@ -24,7 +24,7 @@ for filename in os.listdir(source_folder2):
         source_file = os.path.join(source_folder2, filename)
         output_file = os.path.join(temp_folder, filename)
         shutil.copy2(source_file, output_file)
-        print(f'All folder copied {filename} to {output_folder}')
+        print(f'All folder copied to {output_folder}')
 
 for filename in os.listdir(temp_folder):
     try:
