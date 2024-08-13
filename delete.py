@@ -7,7 +7,7 @@ def delete_images(directory):
         
         if os.path.isdir(item_path):
             delete_images(item_path)
-        elif item.lower().endswith(('.jpg', '.png', '.jpeg', '.gif', 'webp')):
+        elif item.lower().endswith(('.jpg', '.png', '.jpeg', '.gif', 'webp', '.jfif', '.avif')):
             os.remove(item_path)
             print(f'Removed {item}')
 delete_images(root_dir)

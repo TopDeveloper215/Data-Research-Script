@@ -12,7 +12,7 @@ if not os.path.exists(output_folder):
 
 for filename in os.listdir(src_folder):
     try:
-        if filename.lower().endswith(('.jpg', '.png', '.jpeg', '.webp')):
+        if filename.lower().endswith(('.jpg', '.png', '.jpeg', '.webp', '.jfif', '.avif')):
             src_path = os.path.join(src_folder, filename)
             image = Image.open(src_path).convert("RGB")
             output_path = os.path.join(flip_folder, filename)            
@@ -28,7 +28,7 @@ for filename in os.listdir(src_folder):
 
 for filename in os.listdir(flip_folder):
     try:
-        if filename.lower().endswith(('.jpg', '.png', '.jpeg', '.webp')):
+        if filename.lower().endswith(('.jpg', '.png', '.jpeg', '.webp', '.jfif', '.avif')):
           output_path = os.path.join(flip_folder, filename)
           dst_path = os.path.join(output_folder, os.path.splitext(filename)[0] + '.jpg')
           with Image.open(output_path) as rotated_image:

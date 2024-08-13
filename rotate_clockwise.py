@@ -9,7 +9,7 @@ if not os.path.exists(output_folder):
 
 for filename in os.listdir(source_folder):
     try:
-        if filename.lower().endswith(('.jpg', '.png', '.jpeg', '.webp')):
+        if filename.lower().endswith(('.jpg', '.png', '.jpeg', '.webp', '.jfif', '.avif')):
             image_path = os.path.join(source_folder, filename)
             image = Image.open(image_path)
             rotated_image = image.rotate(-10)
