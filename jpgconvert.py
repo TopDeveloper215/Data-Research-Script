@@ -24,7 +24,7 @@ def process_images_in_directory(src_folder, flip_folder, output_folder):
 
         for filename in files:
             try:
-                if filename.lower().endswith(('.jpg', '.png', '.jpeg', '.webp', '.jfif', '.avif')):
+                if filename.lower().endswith(('.jpg', '.png', '.jpeg', '.webp', '.bmp', '.avif')):
                     src_path = os.path.join(root, filename)
                     image = Image.open(src_path).convert("RGB")
                     flip_path = os.path.join(current_flip_folder, filename)            
