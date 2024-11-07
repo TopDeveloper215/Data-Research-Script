@@ -5,6 +5,8 @@ src_folder = './0.origin_images'
 flip_folder = './3.flipped'
 output_folder = './1.converted_to_jpg'
 
+if not os.path.exists(src_folder):
+    os.makedirs(src_folder)
 if not os.path.exists(flip_folder):
     os.makedirs(flip_folder)
 if not os.path.exists(output_folder):
@@ -12,9 +14,14 @@ if not os.path.exists(output_folder):
 
 def process_images_in_directory(src_folder, flip_folder, output_folder):
     for root, dirs, files in os.walk(src_folder):
+        print('root', root)
+        print('dirs', dirs)
+        print('files', files)
         # Calculate relative path and create corresponding directory in flip_folder and output_folder
         relative_path = os.path.relpath(root, src_folder)
+        print(relative_path)
         current_flip_folder = os.path.join(flip_folder, relative_path)
+        print(current_flip_folder)
         current_output_folder = os.path.join(output_folder, relative_path)
         
         if not os.path.exists(current_flip_folder):
